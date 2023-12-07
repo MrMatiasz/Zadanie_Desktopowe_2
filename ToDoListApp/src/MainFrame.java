@@ -11,16 +11,8 @@ public class MainFrame extends JFrame implements ActionListener {
     private JPanel footerPanel;
     static JLabel titleLab = new JLabel("toDOlist");
     private JButton addBtn;
-    private JPanel task;
     private List list;
-
-    private JLabel index;
-    private JLabel taskTitle;
-    private JButton doneBtn;
-    private JButton detailsBtn;
     static Connection connection;
-
-    private boolean checked;
 
     Border emptyBorder = BorderFactory.createEmptyBorder();
     MainFrame(){
@@ -53,39 +45,6 @@ public class MainFrame extends JFrame implements ActionListener {
         mainPanel.setLayout(new GridLayout(10,1, 0 ,5));
         mainPanel.setBackground(Color.darkGray);
 
-
-        task = new JPanel();
-
-        task.setPreferredSize(new Dimension(40,30));
-        task.setLayout(new BorderLayout());
-        task.setBackground(Color.red);
-
-        checked = false;
-
-
-        index = new JLabel("");
-
-        index.setPreferredSize(new Dimension(20,20));
-        index.setHorizontalAlignment(JLabel.CENTER);
-
-        taskTitle = new JLabel("");
-
-        taskTitle.setFont(new Font("Arial", Font.BOLD, 24));
-
-
-        doneBtn = new JButton("Done");
-
-        doneBtn.setPreferredSize(new Dimension(40,20));
-        doneBtn.setFocusable(false);
-        doneBtn.setBorder(BorderFactory.createEmptyBorder());
-
-        detailsBtn = new JButton("details");
-
-        detailsBtn.setPreferredSize(new Dimension(50,20));
-        detailsBtn.setFocusable(false);
-        detailsBtn.setBorder(BorderFactory.createEmptyBorder());
-
-
         //footer panel
         footerPanel = new JPanel();
 
@@ -108,14 +67,6 @@ public class MainFrame extends JFrame implements ActionListener {
         this.add(mainPanel, BorderLayout.CENTER);
 
         topPanel.add(titleLab);
-
-        mainPanel.add(task);
-
-        task.add(index, BorderLayout.WEST);
-        task.add(taskTitle, BorderLayout.CENTER);
-        task.add(doneBtn, BorderLayout.EAST);
-        task.add(detailsBtn, BorderLayout.EAST);
-
 
         footerPanel.add(addBtn);
         this.setVisible(true);
@@ -151,6 +102,9 @@ public class MainFrame extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == addBtn){
             databaseConnect();
+            Task task = new Task();
+            mainPanel.add(task);
+            revalidate();
         }
     }
 }
