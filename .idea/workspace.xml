@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c06438ee-03fe-4f37-a731-a0062a048ad2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ToDoListApp/src/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/ToDoListApp/src/MainFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ToDoListApp/src/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/ToDoListApp/src/Task.java" afterDir="false" />
     </list>
@@ -31,7 +32,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Matiasz/Downloads/mysql-connector-j-8.2.0.jar",
+    "last_opened_file_path": "C:/GitHub/Zadanie_Desktopowe_2",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"

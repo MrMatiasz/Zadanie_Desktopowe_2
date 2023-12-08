@@ -12,7 +12,6 @@ public class MainFrame extends JFrame implements ActionListener {
     static JLabel titleLab = new JLabel("toDOlist");
     private JButton addBtn;
     private List list;
-    static Connection connection;
 
     Border emptyBorder = BorderFactory.createEmptyBorder();
     MainFrame(){
@@ -72,36 +71,10 @@ public class MainFrame extends JFrame implements ActionListener {
         this.setVisible(true);
     }
 
-    public void databaseConnect(){
-        String url = "jdbc:mysql://localhost:3306/taskList";
-        String username = "root";
-        String password = "";
-
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-
-            connection = DriverManager.getConnection(url, username, password);
-
-            Statement statement = connection.createStatement();
-
-            ResultSet query = statement.executeQuery("select * from tasks");
-
-            while (query.next()) {
-                System.out.println(query.getInt(1) + ". " + query.getString(2)+ " " + query.getString(3));
-            }
-
-            String test = query.getString(2);
-
-            connection.close();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == addBtn){
-            databaseConnect();
             Task task = new Task();
             mainPanel.add(task);
             revalidate();
